@@ -1,8 +1,8 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='basicfoncier',
-    packages=['basicfoncier', 'basicfoncier.utils'],
+    packages=find_packages(),
     description='Package public de fonctions pour traiter les données foncières (données cadastrales et autres)',
     version='0.1',
     url='http://github.com/PiouPiou974/basicfoncier',
