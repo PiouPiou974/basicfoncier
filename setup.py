@@ -15,5 +15,5 @@ setup(
     url='http://github.com/PiouPiou974/basicfoncier',
     author='Antoine PETIT',
     author_email='antoine.petit@lilo.org',
-    keywords=['pip', 'basicfoncier', 'foncier']
+    keywords=['basicfoncier', 'foncier']
 )
