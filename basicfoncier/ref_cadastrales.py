@@ -78,7 +78,7 @@ def ref_parcelle_to_idu(ref: str) -> str:
     :param ref: une référence cadastrale
     :return: idu (14 caractères)
     """
-    com_insee, com_abs, section, numero = ref_parcelle_to_parts(ref)
+    com_insee, section, numero, com_abs = ref_parcelle_to_parts(ref)
     return idu_from_parts(com_insee, section, numero, com_abs)
 
 
@@ -89,5 +89,5 @@ def ref_parcelle_to_short_id(ref: str) -> str:
     :param ref: une référence cadastrale
     :return: id (7 à 14 caractères)
     """
-    com_insee, com_abs, section, numero = ref_parcelle_to_parts(ref)
+    com_insee, section, numero, com_abs = ref_parcelle_to_parts(ref)
     return short_id_from_parts(com_insee, section, numero, com_abs)
