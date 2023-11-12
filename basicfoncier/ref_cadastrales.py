@@ -68,7 +68,7 @@ def ref_parcelle_to_parts(ref: str) -> tuple[str, str, str, str]:
     section = ref_restante[:last_alpha]
     numero = ref_restante[last_alpha:]
     assert numero != ''
-    return com_insee.zfill(5), section.zfill(2), numero.zfill(4), com_abs.zfill(4)
+    return com_insee.zfill(5), section.zfill(2), numero.zfill(4), com_abs.zfill(3)
 
 
 def ref_parcelle_to_idu(ref: str) -> str:
