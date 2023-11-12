@@ -42,7 +42,7 @@ def ref_parcelle_to_parts(ref: str) -> tuple[str, str, str, str]:
     if ref.startswith('57') or ref.startswith('67') or ref.startswith('68'):
         assert len(ref) == 14
         assert ref.isnumeric()
-        return ref[0:5], ref[5:8], ref[8:10], ref[10:]
+        return ref[0:5], ref[8:10], ref[10:], ref[5:8]
 
     assert 7 <= len(ref) <= 14
     com_insee = ref[0:5]
@@ -66,9 +66,9 @@ def ref_parcelle_to_parts(ref: str) -> tuple[str, str, str, str]:
     assert last_alpha != -1
     assert last_alpha <= 2
     section = ref_restante[:last_alpha]
-    parcelle = ref_restante[last_alpha:]
-    assert parcelle != ''
-    return com_insee.zfill(5), com_abs.zfill(4), section.zfill(2), parcelle.zfill(4)
+    numero = ref_restante[last_alpha:]
+    assert numero != ''
+    return com_insee.zfill(5), section.zfill(2), numero.zfill(4), com_abs.zfill(4)
 
 
 def ref_parcelle_to_idu(ref: str) -> str:
@@ -79,7 +79,7 @@ def ref_parcelle_to_idu(ref: str) -> str:
     :return: idu (14 caractères)
     """
     com_insee, com_abs, section, numero = ref_parcelle_to_parts(ref)
-    return idu_from_parts(com_insee, com_abs, section, numero)
+    return idu_from_parts(com_insee, section, numero, com_abs)
 
 
 def ref_parcelle_to_short_id(ref: str) -> str:
@@ -90,4 +90,4 @@ def ref_parcelle_to_short_id(ref: str) -> str:
     :return: id (7 à 14 caractères)
     """
     com_insee, com_abs, section, numero = ref_parcelle_to_parts(ref)
-    return short_id_from_parts(com_insee, com_abs, section, numero)
+    return short_id_from_parts(com_insee, section, numero, com_abs)

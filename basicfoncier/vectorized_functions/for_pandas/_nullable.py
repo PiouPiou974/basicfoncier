@@ -7,7 +7,7 @@ from ... import superficie as pyfunc_superficie
 
 def short_id_from_parts(com_insee: str, section: str, numero: str, com_abs: str) -> NAType | str:
     try:
-        return pyfunc_ref_cad.short_id_from_parts(com_insee, com_abs, section, numero)
+        return pyfunc_ref_cad.short_id_from_parts(com_insee, section, numero,  com_abs)
 
     except:
         return NA
@@ -15,7 +15,7 @@ def short_id_from_parts(com_insee: str, section: str, numero: str, com_abs: str)
 
 def idu_from_parts(com_insee: str, section: str, numero: str, com_abs: str = "000") -> NAType | str:
     try:
-        return pyfunc_ref_cad.idu_from_parts(com_insee, com_abs, section, numero)
+        return pyfunc_ref_cad.idu_from_parts(com_insee, section, numero, com_abs)
 
     except:
         return NA
