@@ -26,6 +26,10 @@ def short_id_from_parts(com_insee: str, section: str, numero: str, com_abs: str 
     :param com_abs: code de commune absorbée pour les communes nouvelles
     :return: code identifiant court de la parcelle, maximum 14 caractères, minimum 7
     """
+
+    if com_abs == "000":
+        com_abs = ""
+
     return com_insee + com_abs + section.replace("0", "") + str(int(numero))
 
 

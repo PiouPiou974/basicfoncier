@@ -190,7 +190,9 @@ arr = array(['1 ha  13 a  20 ca', '1 ha  0 a  3 ca', '22 a 97 ca',
        '10 a 64 ca', '35 a 10 ca', '18 a 25 ca', '18 a 70 ca'],
       dtype=object)
 
-print(ref_parcelle_to_parts(df_plots.idu))
+a = ref_parcelle_to_parts(["972150000C0302"])
+print(a)
+"""
 print(superficie_from_str(df_plots.superficie_ha))
 print(superficie_ha_a_ca(df_plots.superficie_m2))
 print(superficie_ha_a_ca(df_plots_na_none.superficie_m2))
@@ -199,3 +201,4 @@ print(superficie_ha_a_ca(df_only_one.superficie_m2))
 print(superficie_from_str(arr))
 
 
+"""
